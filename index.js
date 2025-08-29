@@ -59,21 +59,3 @@ clearBtn.onclick = function () {
 };
 
 //copy button 
-const copyButtons = document.getElementsByClassName("copy-btn");
-
-for (const btn of copyButtons) {
-  btn.onclick = function () {
-    const card = this.parentNode.parentNode;
-
-    const serviceNumber = card.getElementsByClassName("number")[0].innerHTML;
-
-    const tempInput = document.createElement("input");
-    tempInput.value = serviceNumber;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    alert("Copied: " + serviceNumber);
-  };
-}
-
